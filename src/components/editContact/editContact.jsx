@@ -28,15 +28,17 @@ const EditContact = () => {
       }).then((response)=>{
         console.log(response.data);
         if(response.data.success==false) {
-            return alert(response.data.message)
+            alert(response.data.message)
+            return window.location.href = '/contact/view/'+id
         } else {
-            return alert('Save success.')
+            alert('Save success.')
+            return window.location.href = '/contact/view/'+id
         }
       }).catch(err=>{
         console.log('Error in loading.', err);
         alert('Please try again after sometime.')
+        window.location.href = '/contact/view/'+id
       })
-      window.location.href = '/contact/view/'+id
   }
   const [detailsCard, setDetailsCard] = useState('Loading....')
   const [contact, setContact] = useState({
