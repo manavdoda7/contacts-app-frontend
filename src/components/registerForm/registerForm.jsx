@@ -38,7 +38,7 @@ const registerForm = () => {
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">
                     <form onSubmit={submitHandler}>
-                      <h1>User Registeration</h1>
+                      <h1>Register</h1>
                       <Input label="First Name" type="text" id="firstName" />
                       <Input label="Last Name" type="text" id="lastName" />
                       <Input label="Email" type="email" id="email" />
@@ -47,9 +47,6 @@ const registerForm = () => {
                       <Link type="submit" value="Login" to='/login' className="btn btn-outline-dark mx-1" >Login</Link>
                     </form>
                   </div>
-                </div>
-                <div className="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src='#' alt="login form" className="img-fluid" style={{borderRadius:'0 1rem 1rem 0'}} />
                 </div>
               </div>
             </div>
