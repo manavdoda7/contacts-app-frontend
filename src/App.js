@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import LoginForm from "./components/loginForm/loginForm";
+import RegisterForm from "./components/registerForm/registerForm";
+import Homepage from "./components/homepage/homepage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/dashboard/dashboard";
+import ViewContact from "./components/viewContact/viewContact";
+import EditContact from "./components/editContact/editContact";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Homepage/>} />
+        <Route exact path="/register" element={<RegisterForm/>} />
+        <Route exact path="/login" element={<LoginForm/>} />
+        <Route exact path="/dashboard" element={<Dashboard/>} />
+        <Route exact path="/contact/view/:id" element={<ViewContact/>} />
+        <Route exact path="/contact/edit/:id" element={<EditContact/>} />
+      </Routes>
+    </Router>
   );
 }
 
